@@ -76,10 +76,11 @@ export default function Hero() {
 
   return (
     <section
+      suppressHydrationWarning
       aria-labelledby="hero-heading"
       style={{
         background: '#f9fffe',
-        padding: 'clamp(6rem, 14vw, 11rem) 0',
+        padding: 'clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem)',
       }}
     >
       <style suppressHydrationWarning>{`
@@ -247,6 +248,22 @@ export default function Hero() {
           0%, 100% { opacity: 1; }
           50%       { opacity: 0; }
         }
+        @keyframes bounce-down {
+          0%, 100% { transform: translateY(0); opacity: 0.35; }
+          50%       { transform: translateY(6px); opacity: 0.6; }
+        }
+        .scroll-hint {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          animation: bounce-down 1.8s ease-in-out infinite;
+          color: #d4cfc8;
+          transition: color 200ms ease;
+          cursor: pointer;
+          text-decoration: none;
+        }
+        .scroll-hint:hover { color: #17b5f2; }
+
         @keyframes pulse-dot {
           0%, 100% { box-shadow: 0 0 0 4px rgba(23,181,242,0.15), 0 0 14px rgba(23,181,242,0.35); }
           50%       { box-shadow: 0 0 0 6px rgba(23,181,242,0.25), 0 0 20px rgba(23,181,242,0.5); }
@@ -256,6 +273,7 @@ export default function Hero() {
         @media (prefers-reduced-motion: reduce) {
           .tl-dot.active  { animation: none; }
           .typing-cursor  { animation: none; }
+          .scroll-hint    { animation: none; }
           .hero-year      { transition: none; }
           .tl-desc        { transition: none; max-height: 80px; opacity: 1; margin-top: 4px; }
           .tl-desc.active { max-height: 80px; }
@@ -296,7 +314,7 @@ export default function Hero() {
             style={{
               fontFamily: 'var(--font-display-var, sans-serif)',
               fontWeight: 800,
-              fontSize: 'clamp(1.875rem, 3.5vw, 2.75rem)',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               lineHeight: 1.15,
               color: '#252021',
               letterSpacing: '-0.02em',
@@ -348,7 +366,7 @@ export default function Hero() {
                 fontWeight: 700,
                 fontSize: '0.9375rem',
                 padding: '14px 28px',
-                borderRadius: '10px',
+                borderRadius: '12px',
                 textDecoration: 'none',
                 transition: 'background 200ms ease, transform 200ms ease, box-shadow 200ms ease',
               }}
@@ -393,6 +411,15 @@ export default function Hero() {
           </ol>
         </div>
 
+      </div>
+
+      {/* Scroll hint */}
+      <div style={{ textAlign: 'center', marginTop: 'clamp(2.5rem, 5vw, 4rem)' }}>
+        <a href="#projekty" className="scroll-hint" aria-label="Přejít na projekty">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a>
       </div>
     </section>
   )

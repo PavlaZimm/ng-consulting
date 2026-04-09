@@ -21,7 +21,7 @@ function ProjectCard({ project }: { project: Project }) {
         position: 'relative',
         overflow: 'hidden',
         background: isComingSoon ? '#f0eeeb' : '#ffffff',
-        borderRadius: '16px',
+        borderRadius: '12px',
         padding: '32px',
         opacity: isComingSoon ? 0.85 : 1,
         display: 'flex',
@@ -246,7 +246,7 @@ export default function Projects() {
             id="projekty-heading"
             style={{
               fontFamily: 'var(--font-display-var, sans-serif)',
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: 'clamp(1.5rem, 3vw, 2rem)',
               color: '#252021',
               margin: 0,

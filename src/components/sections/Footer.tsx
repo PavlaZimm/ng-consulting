@@ -5,7 +5,7 @@ import { contact } from '@/lib/data'
 const footerLinks = [
   { label: 'Projekty',  href: '#projekty' },
   { label: 'Reference', href: '#reference' },
-  { label: 'Kontakt',   href: '#kontakt' },
+  { label: 'Kontakt',   href: '/kontakt' },
 ]
 
 export default function Footer() {

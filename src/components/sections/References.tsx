@@ -19,7 +19,7 @@ export default function References() {
           padding: 1.5rem 1.75rem;
           background: #ffffff;
           border: 1px solid #e8e4e0;
-          border-radius: 14px;
+          border-radius: 12px;
           transition: background 220ms ease, border-color 220ms ease;
           cursor: default;
           min-height: 100px;
@@ -65,7 +65,7 @@ export default function References() {
             id="reference-heading"
             style={{
               fontFamily: 'var(--font-display-var, sans-serif)',
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: 'clamp(1.5rem, 3vw, 2rem)',
               color: '#252021',
               margin: 0,
