@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ngconsulting.cz',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ng-consulting.vercel.app',
   generateRobotsTxt: true,
   exclude: ['/icon', '/opengraph-image'],
   robotsTxtOptions: {
