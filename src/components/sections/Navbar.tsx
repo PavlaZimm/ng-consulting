@@ -32,7 +32,7 @@ export default function Navbar() {
         style={{
           maxWidth: '960px',
           margin: '0 auto',
-          padding: '0 clamp(1rem, 5vw, 2rem)',
+          padding: '0 clamp(1.5rem, 6vw, 4rem)',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
