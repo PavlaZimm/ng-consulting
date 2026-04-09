@@ -33,7 +33,7 @@ export default function KontaktPage() {
             minHeight: 'calc(100vh - 64px)',
           }}
         >
-          <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '960px', margin: '0 auto' }}>
 
             {/* Page header */}
             <div style={{ marginBottom: 'clamp(2rem, 5vw, 3.5rem)' }}>
