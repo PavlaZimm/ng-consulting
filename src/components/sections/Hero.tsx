@@ -79,7 +79,7 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       style={{
         background: '#f9fffe',
-        padding: 'clamp(3rem, 8vw, 6rem) 0',
+        padding: 'clamp(6rem, 14vw, 11rem) 0',
       }}
     >
       <style suppressHydrationWarning>{`

@@ -15,6 +15,7 @@ export default function Navbar() {
 
   return (
     <header
+      suppressHydrationWarning
       style={{
         position: 'sticky',
         top: 0,
@@ -22,7 +23,7 @@ export default function Navbar() {
         background: 'rgba(249, 255, 254, 0.92)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #d4cfc8',
+        borderBottom: 'none',
         height: '64px',
       }}
     >
