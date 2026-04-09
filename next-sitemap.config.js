@@ -2,12 +2,25 @@
 module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ngconsulting.cz',
   generateRobotsTxt: true,
+  exclude: ['/icon', '/opengraph-image'],
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },
     ],
   },
   changefreq: 'monthly',
-  priority: 1.0,
+  priority: 0.7,
   sitemapSize: 7000,
+  transform: async (config, path) => {
+    const priorities = {
+      '/': 1.0,
+      '/kontakt': 0.8,
+    }
+    return {
+      loc: path,
+      changefreq: config.changefreq,
+      priority: priorities[path] ?? config.priority,
+      lastmod: new Date().toISOString(),
+    }
+  },
 }

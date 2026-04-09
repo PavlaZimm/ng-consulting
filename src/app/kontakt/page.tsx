@@ -20,9 +20,40 @@ const contactItems = [
   { icon: MapPin, label: 'Adresa',          value: 'Hanychovská 575/33\n460 07 Liberec' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Kontakt — NG Consulting',
+  url: 'https://ngconsulting.cz/kontakt',
+  description: 'Kontaktujte NG Consulting — tvorba webů, e-mailing, lokální komunity. Liberec a celá ČR.',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'NG Consulting s.r.o.',
+    url: 'https://ngconsulting.cz',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Hanychovská 575/33',
+      addressLocality: 'Liberec',
+      postalCode: '460 07',
+      addressCountry: 'CZ',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+420608133557',
+      email: 'vytiska@ngstranky.cz',
+      contactType: 'customer service',
+      availableLanguage: 'Czech',
+    },
+  },
+}
+
 export default function KontaktPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main id="main-content">
         <section
