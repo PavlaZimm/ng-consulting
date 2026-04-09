@@ -7,9 +7,13 @@ import ContactForm from './ContactForm'
 export const metadata: Metadata = {
   title: 'Kontakt | NG Consulting',
   description: 'Kontaktujte NG Consulting — tvorba webů, e-mailing, lokální komunity. Liberec a celá ČR.',
+  alternates: {
+    canonical: 'https://ngconsulting.cz/kontakt',
+  },
   openGraph: {
     title: 'Kontakt | NG Consulting',
     description: 'Kontaktujte NG Consulting — tvorba webů, e-mailing, lokální komunity. Liberec a celá ČR.',
+    url: 'https://ngconsulting.cz/kontakt',
   },
 }
 
@@ -19,6 +23,25 @@ const contactItems = [
   { icon: Phone,  label: 'Telefon',         value: '+420 608 133 557',     href: 'tel:+420608133557' },
   { icon: MapPin, label: 'Adresa',          value: 'Hanychovská 575/33\n460 07 Liberec' },
 ]
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Domů',
+      item: 'https://ngconsulting.cz',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Kontakt',
+      item: 'https://ngconsulting.cz/kontakt',
+    },
+  ],
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -50,6 +73,10 @@ const jsonLd = {
 export default function KontaktPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

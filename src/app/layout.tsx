@@ -47,10 +47,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'LocalBusiness',
   name: 'NG Consulting s.r.o.',
   url: 'https://ngconsulting.cz',
   logo: 'https://ngconsulting.cz/opengraph-image',
+  image: 'https://ngconsulting.cz/opengraph-image',
   description:
     'Mateřská agentura skupiny projektů zaměřených na tvorbu webů, e-mailing a lokální online komunity.',
   address: {
@@ -60,12 +61,23 @@ const jsonLd = {
     postalCode: '460 07',
     addressCountry: 'CZ',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 50.7663,
+    longitude: 15.0543,
+  },
+  telephone: '+420608133557',
+  email: 'vytiska@ngstranky.cz',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+420608133557',
     contactType: 'customer service',
     email: 'vytiska@ngstranky.cz',
     availableLanguage: 'Czech',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Česká republika',
   },
   sameAs: [
     'https://ngstranky.cz',
