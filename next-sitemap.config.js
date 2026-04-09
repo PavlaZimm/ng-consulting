@@ -1,13 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://ng-consulting.vercel.app',
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
   exclude: ['/icon', '/opengraph-image'],
-  robotsTxtOptions: {
-    policies: [
-      { userAgent: '*', allow: '/' },
-    ],
-  },
   changefreq: 'monthly',
   priority: 0.7,
   sitemapSize: 7000,
